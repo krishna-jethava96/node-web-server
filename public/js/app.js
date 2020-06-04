@@ -7,6 +7,7 @@ const weatherForm=document.querySelector('form')
 const search= document.querySelector('input')
 const messageOne=document.querySelector('#message-1')
 const messageTwo=document.querySelector('#message-2')
+const imagesource=document.querySelector('#w-image')
 
 weatherForm.addEventListener('submit',(event)=>{
     event.preventDefault()
@@ -24,6 +25,7 @@ weatherForm.addEventListener('submit',(event)=>{
                 // console.log(data.forecast)
                 messageOne.textContent=data.location
                 messageTwo.textContent=data.forecast
+                imagesource.style.background="url('"+data.image+"')"
                 }
             })
         })

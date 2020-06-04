@@ -21,11 +21,13 @@ const forecast = (longitude,latitude,callback) => {
             callback('unable to fine location .Try another !',undefined)
         }
         else{
-            callback(undefined,
-                body.current.weather_descriptions[0] + '. It is currently '+  body.current.temperature + '  degrees out. There is a ' + body.current.feelslike + 'degrees out. The humidity is ' + body.current.humidity +'%.'
+            callback(undefined,{
+                image : body.current.weather_icons[0],
+                body : body.current.weather_descriptions[0] + '. It is currently '+  body.current.temperature + ' degrees out. There is a ' + body.current.feelslike + ' degrees out. The humidity is ' + body.current.humidity +'%.'
                 // weather_description : response.body.current.weather_descriptions[0],
                 // temprature : response.body.current.temperature,
                 // feelsLike: response.body.current.feelslike
+            }
                 )
         }
     })
