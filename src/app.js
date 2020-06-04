@@ -3,6 +3,8 @@ const express= require('express')
 const hbs=require('hbs')
 
 const app = express()
+const port=process.env.PORT || 3000
+
 const publicDirectoryPath=path.join(__dirname,'../public')
 const templateViewPath=path.join(__dirname,'../templates/views')
 const templatePartialPath=path.join(__dirname,'../templates/partial')
@@ -86,6 +88,6 @@ app.get('*',(req,res) => {
         name:'krishna jethava'
     })
 })
-app.listen(3000,()=>{
-    console.log('server is running on 3000')
+app.listen(port,()=>{
+    console.log('server is running on ' + port)
 })
